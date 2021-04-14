@@ -25,6 +25,6 @@ function reverseList(head) {
 	return prev;
 }
 
-console.log(reverseList(ll));
+// console.log(reverseList(ll));
 
 

@@ -161,6 +161,21 @@ class LinkedList {
 		}
 	}
 
+  // reverse the list - NOT FUNCTIONAL
+  reverse() {
+    let prev = null;
+    let next = null;
+    let head = this.head;
+
+    while (head !== null) {
+      next = head.next;
+      head.next = prev;
+      prev = head;
+      head = next;
+    }
+    return prev;
+  }
+
 	// Print list data
 	printListData() {
 		// let current = this.head;

@@ -12,7 +12,8 @@ function main() {
   SLL.insertAt('Kat', 2)
   // SLL.removeItem('Tauhida')
   // SLL.removeHead();
-  // SLL.printListData();
+  // SLL.reverse();
+  SLL.printListData();
   // SLL.getAt(4)
   // SLL.findLast();
   // SLL.printSize();
