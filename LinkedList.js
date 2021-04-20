@@ -152,7 +152,6 @@ class LinkedList {
 			previous = current;
 			current = current.next;
 			count++;
-			console.log(count);
 
 			if (current.next === null) {
 				console.log(current.data);
@@ -161,20 +160,50 @@ class LinkedList {
 		}
 	}
 
-  // reverse the list - NOT FUNCTIONAL
-  reverse() {
-    let prev = null;
-    let next = null;
-    let head = this.head;
+	// reverse the list - NOT FUNCTIONAL
+	reverse() {
+		let prev = null;
+		let next = null;
+		let head = this.head;
 
-    while (head !== null) {
-      next = head.next;
-      head.next = prev;
-      prev = head;
-      head = next;
-    }
-    return prev;
-  }
+		while (head !== null) {
+			next = head.next;
+			head.next = prev;
+			prev = head;
+			head = next;
+		}
+		return prev;
+	}
+
+	// account for node not found
+	find(data) {
+		let node = this.head;
+		while (node.data !== data) {
+			node = node.next;
+			if (node.data === data) {
+				return node;
+			}
+		}
+	}
+
+	insertBefore(data, value) {
+		let node = this.head;
+		let previousNode;
+		while (node.data !== data) {
+			previousNode = node;
+			node = node.next;
+			if (node.data === data) {
+				break;
+			}
+		}
+		const newNode = new Node(value, node);
+		if (previousNode === undefined) {
+			this.head = newNode;
+		} else {
+			previousNode.next = newNode;
+		}
+		this.size++;
+	}
 
 	// Print list data
 	printListData() {

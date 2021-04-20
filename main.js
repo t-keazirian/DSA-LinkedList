@@ -3,13 +3,14 @@ const LinkedList = require('./LinkedList');
 function main() {
   const SLL = new LinkedList();
   SLL.insertFirst('Apollo');
-  SLL.insertFirst('Boomer')
-  SLL.insertFirst('Helo')
-  SLL.insertFirst('Husker')
-  SLL.insertLast('Starbuck')
-  SLL.insertFirst('Tauhida')
-  SLL.removeItem('Husker');
-  SLL.insertAt('Kat', 2)
+  SLL.insertLast('Boomer')
+  SLL.insertBefore('Boomer', 'Starbuck')
+  // SLL.insertFirst('Helo')
+  // SLL.insertFirst('Husker')
+  // SLL.insertLast('Starbuck')
+  // SLL.insertFirst('Tauhida')
+  // SLL.removeItem('Husker');
+  // SLL.insertAt('Kat', 2)
   // SLL.removeItem('Tauhida')
   // SLL.removeHead();
   // SLL.reverse();

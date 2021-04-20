@@ -9,7 +9,7 @@ ll.insertFirst(6);
 ll.insertFirst(5);
 ll.insertLast(7);
 
-// console.log(ll);
+console.log(ll);
 
 function reverseList(head) {
 	let prev = null;
