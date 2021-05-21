@@ -177,13 +177,20 @@ class LinkedList {
 
 	// account for node not found
 	find(data) {
-		let node = this.head;
-		while (node.data !== data) {
-			node = node.next;
-			if (node.data === data) {
-				return node;
+		let currNode = this.head;
+		// if list is empty
+		if (!currNode) {
+			return null;
+		}
+
+		while (currNode.data !== data) {
+			if (currNode.next === null) {
+				return null;
+			} else {
+				currNode = currNode.next;
 			}
 		}
+		return currNode;
 	}
 
 	insertBefore(data, value) {
@@ -257,7 +264,7 @@ ll.insertFirst(100);
 ll.insertFirst(200);
 ll.insertFirst(300);
 ll.insertLast(400);
-ll.insertAt(500, 10);
+ll.insertAt(500, 2);
 
 // ll.clearList();
 
