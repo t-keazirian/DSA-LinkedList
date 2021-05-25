@@ -16,7 +16,7 @@ const LL = new LinkedList();
 // LL.insertFirst(4);
 LL.insertFirst(3);
 LL.insertFirst(2);
-LL.insertFirst(1)
+// LL.insertFirst(1)
 // LL.insertLast(5);
 
 LL.printListData();
