@@ -30,6 +30,53 @@ class LinkedList {
 		this.size++;
 	}
 
+	// remove item
+	removeItem(data) {
+		// if list is empty
+		if (!this.head) {
+			return null;
+		}
+
+		// if node to be removed is head, make next node head
+		if (this.head.data === data) {
+			this.head = this.head.next;
+			return;
+		}
+
+		// start at head
+		let current = this.head;
+		// keep track of previous
+		let previous = this.head;
+
+		while (current !== null && current.data !== data) {
+			previous = current;
+			current = current.next;
+		}
+		if (current === null) {
+			console.log('Data not found');
+			return;
+		}
+		previous.next = current.next;
+		this.size--;
+	}
+
+	find(data) {
+		let currNode = this.head;
+		// if list is empty
+		if (!currNode) {
+			return null;
+		}
+
+		while (currNode.data !== data) {
+			if (currNode.next === null) {
+				return null;
+			} else {
+				currNode = currNode.next;
+			}
+		}
+		return currNode;
+	}
+
 	// Insert at Index
 	insertAt(data, index) {
 		// if index is out of range
@@ -111,36 +158,6 @@ class LinkedList {
 		this.size--;
 	}
 
-	// remove item
-	removeItem(data) {
-		// if list is empty
-		if (!this.head) {
-			return null;
-		}
-
-		// if node to be removed is head, make next node head
-		if (this.head.data === data) {
-			this.head = this.head.next;
-			return;
-		}
-
-		// start at head
-		let current = this.head;
-		// keep track of previous
-		let previous = this.head;
-
-		while (current !== null && current.data !== data) {
-			previous = current;
-			current = current.next;
-		}
-		if (current === null) {
-			console.log('Data not found');
-			return;
-		}
-		previous.next = current.next;
-		this.size--;
-	}
-
 	// find last node in list
 	// need to loop through until next is equal to null
 	findLast() {
@@ -173,24 +190,6 @@ class LinkedList {
 			head = next;
 		}
 		return prev;
-	}
-
-	// account for node not found
-	find(data) {
-		let currNode = this.head;
-		// if list is empty
-		if (!currNode) {
-			return null;
-		}
-
-		while (currNode.data !== data) {
-			if (currNode.next === null) {
-				return null;
-			} else {
-				currNode = currNode.next;
-			}
-		}
-		return currNode;
 	}
 
 	insertBefore(data, value) {
